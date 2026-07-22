@@ -2,7 +2,7 @@
 
 A clean, modular, and object-oriented implementation of the classic **Rock Paper Scissors** game in Python.
 
-This project was developed as part of my journey toward becoming a Machine Learning and AI Engineer. Although the game itself is simple, the primary objective of this project was to practice professional software development concepts such as object-oriented programming, modular project architecture, clean code principles, software design, and unit testing.
+This project was developed as part of my journey toward becoming a Machine Learning and AI Engineer. Although the game itself is simple, the primary goal was to practice professional software development concepts such as object-oriented programming, modular architecture, clean code principles, software design, and unit testing.
 
 ---
 
@@ -10,9 +10,9 @@ This project was developed as part of my journey toward becoming a Machine Learn
 
 This project recreates the traditional Rock Paper Scissors game where a human player competes against the computer.
 
-Instead of writing everything in a single file, the project is designed using a modular architecture where each module has a single responsibility. This makes the code easier to understand, maintain, test, and extend.
+Instead of implementing the entire game in a single file, the application is organized into multiple modules, each with a single responsibility. This modular architecture improves readability, maintainability, testability, and scalability.
 
-The project emphasizes writing readable, reusable, and scalable Python code rather than simply making the game functional.
+The focus of this project is not the complexity of the game itself, but writing clean, reusable, and well-structured Python code.
 
 ---
 
@@ -24,18 +24,18 @@ The project emphasizes writing readable, reusable, and scalable Python code rath
 - ✅ Input validation
 - 🧩 Modular project architecture
 - 🏗️ Object-Oriented Programming (OOP)
-- 📦 Python Enums for game states
+- 📦 Enum-based game states
 - 📝 Centralized message management
-- ⚖️ Separated game logic from user interface
-- 🧪 Unit testing using pytest
-- 📖 Well-structured and documented code
-- 🔧 Easily extensible architecture
+- ⚖️ Separation of game logic and user interface
+- 🧪 Unit testing with pytest
+- 📖 Well-documented code
+- 🔧 Easily extensible design
 
 ---
 
 ## 🧠 Software Engineering Concepts
 
-This project demonstrates the following programming concepts:
+This project demonstrates the following concepts:
 
 - Object-Oriented Programming (OOP)
 - Classes and Objects
@@ -59,16 +59,15 @@ This project demonstrates the following programming concepts:
 
 ## 📂 Project Structure
 
-```
+```text
 rock-paper-scissors/
 │
 ├── main.py                 # Application entry point
 ├── game.py                 # Game controller
 ├── player.py               # Player classes
-├── rules.py                # Game logic
-├── constants.py            # Enums and constants
+├── rules.py                # Game rules and winner determination
+├── constants.py            # Enums and shared constants
 ├── messages.py             # User interface messages
-├── utils.py                # Utility functions
 ├── requirements.txt
 ├── README.md
 │
@@ -82,80 +81,83 @@ rock-paper-scissors/
 
 ## ⚙️ How It Works
 
-The project is organized into several independent modules.
+The project is divided into independent modules, each responsible for a specific task.
 
-### main.py
+### `main.py`
 
-The application's entry point.
+Application entry point.
 
-Creates the game object and starts the program.
-
----
-
-### game.py
-
-Acts as the game controller.
-
-Responsible for:
-
-- Displaying menus
-- Managing the game loop
-- Getting player moves
-- Calling the game rules
-- Displaying results
+- Creates the game object.
+- Starts the application.
 
 ---
 
-### player.py
+### `game.py`
+
+Acts as the controller of the application.
+
+Responsibilities:
+
+- Display menus
+- Manage the game loop
+- Get player moves
+- Call the game rules
+- Display game results
+
+---
+
+### `player.py`
 
 Contains the player classes.
 
-- Base Player class
+- Player (base class)
 - HumanPlayer
 - ComputerPlayer
 
-Each player implements its own strategy for choosing a move.
+Each player implements its own strategy for selecting a move.
 
 ---
 
-### rules.py
+### `rules.py`
 
-Contains all game logic.
+Contains all game rules.
 
-Determines:
+Responsible for determining:
 
 - Win
 - Lose
 - Tie
 
-The game rules are completely separated from the user interface.
+The game logic is completely separated from the user interface.
 
 ---
 
-### constants.py
+### `constants.py`
 
-Stores shared constants and enums such as:
+Stores shared enums and constants.
+
+Examples include:
 
 - Move
 - Result
 
-Using enums improves readability and avoids magic numbers.
+Using enums improves readability and eliminates magic numbers.
 
 ---
 
-### messages.py
+### `messages.py`
 
-Stores every message displayed to the user.
+Stores all user-facing messages.
 
-Keeping all interface text in one location makes future modifications and localization much easier.
+Keeping interface messages in a single location simplifies maintenance and future localization.
 
 ---
 
-### tests/
+### `tests/`
 
-Contains automated unit tests for the game logic.
+Contains automated unit tests.
 
-The tests verify that every possible combination of moves produces the expected result.
+The tests verify that every possible combination of moves produces the expected outcome.
 
 ---
 
@@ -173,7 +175,7 @@ Move into the project directory:
 cd RockPaperScissors
 ```
 
-Install dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -199,7 +201,7 @@ pytest
 
 ## 📝 Example
 
-```
+```text
 ==============================
 ROCK PAPER SCISSORS
 ==============================
@@ -233,16 +235,29 @@ You win!
 
 ---
 
+## 🎯 What I Learned
+
+Through this project, I practiced and improved my understanding of:
+
+- Designing modular applications
+- Applying object-oriented programming principles
+- Separating business logic from presentation
+- Writing reusable and maintainable code
+- Refactoring existing code
+- Building scalable software architecture
+- Writing automated unit tests
+- Organizing a professional GitHub repository
+
+---
+
 ## 🚀 Future Improvements
 
-This project is intentionally designed to be extensible.
-
-Possible future improvements include:
+Possible future enhancements include:
 
 - Score tracking
-- Best of 3 / Best of 5 mode
+- Best of 3 / Best of 5 game modes
 - Difficulty levels
-- AI-based computer strategy
+- Smarter AI opponent
 - Multiplayer mode
 - Save match history
 - Graphical User Interface (Tkinter or PyQt)
@@ -250,30 +265,13 @@ Possible future improvements include:
 - Statistics dashboard
 - Configuration file support
 - Colored terminal output
-- Continuous Integration (GitHub Actions)
-
----
-
-## 🎯 Learning Goals
-
-The primary goal of this project was to practice writing professional Python code rather than simply implementing a game.
-
-Through this project I practiced:
-
-- Designing modular applications
-- Applying object-oriented programming principles
-- Separating business logic from presentation
-- Writing reusable code
-- Refactoring
-- Creating maintainable software architecture
-- Writing automated tests
-- Organizing a professional GitHub repository
+- GitHub Actions for Continuous Integration
 
 ---
 
 ## 👨‍💻 Author
 
-**Arad Charon**
+**Arad Shafiee**
 
 Mathematics & Computer Science Student
 
@@ -292,4 +290,4 @@ https://github.com/AradCharon
 
 ## ⭐ Repository
 
-If you found this project helpful or interesting, consider giving it a ⭐ on GitHub.
+If you found this project useful or interesting, consider giving it a ⭐ on GitHub.
